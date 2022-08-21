@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    background-image: url("https://source.unsplash.com/1600x900/?landscape");
+    font-size: 120%;
+}
+
+.big-card {
+    /* background: #eaeaead2; */
+    background-color: rgba(0, 0, 0, 0.849);
+    color: whitesmoke;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    margin-left: 3.5em;
+    box-shadow: -6px 10px 14px -5px rgba(0, 0, 0, 0.575);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 41px;
+    width: 41px;
+    background-color: rgba(128, 128, 128, 0.575);
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgba(245, 245, 245, 0.418);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.img-sizer {
+    width: 16px;
+    height: 16px;
+}
+
+.inputText {
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 100%;
+    width: calc(100% - 100px);
+    background-color: rgba(128, 128, 128, 0.575);
+    color: white;
+}
+
+.description,
+.humidity,
+.wind {
+    margin: 10px;
+}
+
+.weather {
+    margin: 0;
+    font-size: 2em;
+    height: 2.5em;
+    width: 95%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.flex h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+}
+
+.details {
+    width: 95%;
+    font-weight: 400;
+
+}
+
+.showResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+}
+
+/* ------------------------------------------------- little-cards */
+
+.little-card1,
+.little-card2,
+.little-card3 {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.849);
+    color: white;
+    padding: 1em;
+    border-radius: 30px;
+    width: 110%;
+    max-width: 900px;
+    margin: 15px;
+    box-shadow: 4px 9px 14px -1px rgba(17,51,85,0.27);
+}
+
+.little-flex_desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.little-name {
+    margin: 0;
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+.little-temp {
+    margin: 0;
+    font-size: 2em;
+    color: rgba(245, 245, 245, 0.781);
+}
+
+.little-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
