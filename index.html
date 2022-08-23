@@ -14,23 +14,35 @@
 </head>
 
 <body>
-    <div class="big-card">
-        <div class="search">
-            <input type="text" class="inputText" placeholder="Ingrese una ciudad: ">
-            <button class="btn"><img src="./lupa.png" class="img-sizer"></button>
+
+    <div class="container">
+        <div class="big-card">
+
+            <div class="form-flex">
+                <input id="input-name" type="text" placeholder="Escriba su nombre" class="input-user">
+                <button class="btn-ok"><img src="./img/ok.png" class="ok"></button>
+            </div>
+
+            <div class="search">
+                <input type="text" class="inputText" placeholder="Ingrese una ciudad: ">
+                <button class="btn"><img src="./img/lupa.png" class="img-sizer"></button>
+            </div>
+            <div class="showResult"></div>
         </div>
-        <div class="showResult"></div>
+    
+        <div class="little-container">
+            <div class="little-welcome-card"><p class="welcome-p">Bienvenido</p><span class="span"></span></div>
+            <div class="little-card1 little-flex"></div>
+            <div class="little-card2 little-flex"></div>
+            <div class="little-card3 little-flex"></div>
+        </div>
     </div>
 
-    <div class="little-container">
-        <div class="little-card1 little-flex"></div>
-        <div class="little-card2 little-flex"></div>
-        <div class="little-card3 little-flex"></div>
-    </div>
-
-
+    
     <script src="main.js"></script>
+    <script src="login.js"></script>
     <script src="showContent.js"></script>
+    
 </body>
 
 </html>

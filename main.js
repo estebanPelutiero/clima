@@ -2,11 +2,14 @@
 const userInput = document.querySelector(".inputText");
 const submitButton = document.querySelector(".btn");
 const showData = document.querySelector(".showResult");
+
 const littleCard1 = document.querySelector(".little-card1");
 const littleCard2 = document.querySelector(".little-card2");
 const littleCard3 = document.querySelector(".little-card3");
+
 const littleArray = [littleCard1, littleCard2, littleCard3];
 const littleCities = ["barcelona", "amsterdam", "sacramento"];
+
 const apiKey = "021632e04bc43b4be00627223cbb782e";
 
 window.addEventListener("load", function(){

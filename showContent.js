@@ -11,7 +11,7 @@ const fetchAPIbigCard = (call) => {
             <div class="weather"><p>Clima en ${data.name}<p></div>
             <div class="flex">
                 <h1>${data.main.temp} °C</h1>
-                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="icon">
             </div>
             <div class="details">
                 <div class="description">condiciones:  ${data.weather[0].description}</div>
@@ -51,7 +51,10 @@ const fetchAPIlittleCard2 = (call) => {
             littleCard2.innerHTML = `
             <div class="little-name">${data.name}</div>
             <div class="little-temp">${parseFloat(data.main.temp).toFixed(2)} °C</div>
-            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`
+            <div class="little-flex_desc">
+                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+                <div class="little-description">${data.weather[0].description}</div>
+            </div>`
         });
 }
 
@@ -65,7 +68,10 @@ const fetchAPIlittleCard3 = (call) => {
             littleCard3.innerHTML = `
             <div class="little-name">${data.name}</div>
             <div class="little-temp">${parseFloat(data.main.temp).toFixed(2)} °C</div>
-            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`
+            <div class="little-flex_desc">
+                <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+                <div class="little-description">${data.weather[0].description}</div>
+            </div>`
         });
 }
 
