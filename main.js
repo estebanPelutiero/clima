@@ -56,6 +56,10 @@ function positionNotOk(err) {
 }
 
 
+userInput.addEventListener("input", () => {
+    event.preventDefault()
+});
+
 // EVENTO QUE OCURRE AL APRETAR EL BOTON PARA BUSCAR LA CIUDAD
 
 submitButton.addEventListener("click", () => {
@@ -65,6 +69,7 @@ submitButton.addEventListener("click", () => {
     const userApiCallClick = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputBtn}&lang=es&units=metric&APPID=${apiKey}`;
 
     fetchAPIbigCard(userApiCallClick);
+
 });
 
 // EVENTO PARA CAPTURAR TECLA "ENTER" EN EL INPUT
@@ -80,5 +85,6 @@ document.querySelector(".inputText").addEventListener("keyup", function (event){
 
         fetchAPIbigCard(enterApiCall);
     }
+    
 });
 

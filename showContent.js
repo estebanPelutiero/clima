@@ -6,7 +6,7 @@ const fetchAPIbigCard = (call) => {
             return Response.json();
         })
         .then(data => {
-            console.log(data);
+            // console.log(data);
             showData.innerHTML = `
             <div class="weather"><p>Clima en ${data.name}<p></div>
             <div class="flex">
@@ -29,7 +29,6 @@ const fetchAPIlittleCard1 = (call) => {
             return Response.json();
         })
         .then(data => {
-            console.log(data);
             littleCard1.innerHTML = `
             <div class="little-name">${data.name}</div>
             <div class="little-temp">${parseFloat(data.main.temp).toFixed(2)} °C</div>
@@ -47,7 +46,6 @@ const fetchAPIlittleCard2 = (call) => {
             return Response.json();
         })
         .then(data => {
-            console.log(data);
             littleCard2.innerHTML = `
             <div class="little-name">${data.name}</div>
             <div class="little-temp">${parseFloat(data.main.temp).toFixed(2)} °C</div>
@@ -64,7 +62,6 @@ const fetchAPIlittleCard3 = (call) => {
             return Response.json();
         })
         .then(data => {
-            console.log(data);
             littleCard3.innerHTML = `
             <div class="little-name">${data.name}</div>
             <div class="little-temp">${parseFloat(data.main.temp).toFixed(2)} °C</div>
@@ -74,4 +71,5 @@ const fetchAPIlittleCard3 = (call) => {
             </div>`
         });
 }
+
 
