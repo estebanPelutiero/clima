@@ -1,5 +1,6 @@
 
 const userInput = document.querySelector(".inputText");
+
 const submitButton = document.querySelector(".btn");
 const showData = document.querySelector(".showResult");
 
@@ -8,7 +9,7 @@ const littleCard2 = document.querySelector(".little-card2");
 const littleCard3 = document.querySelector(".little-card3");
 
 const littleArray = [littleCard1, littleCard2, littleCard3];
-const littleCities = ["barcelona", "amsterdam", "sacramento"];
+const littleCities = ["Buenos aires", "amsterdam", "sacramento"];
 
 const apiKey = "021632e04bc43b4be00627223cbb782e";
 
@@ -17,59 +18,41 @@ window.addEventListener("load", function(){
     navigator.geolocation.getCurrentPosition(positionSuccess, positionNotOk);
 });
 
+let apiCallDefaultCity1;
+let apiCallDefaultCity2;
+let apiCallDefaultCity3;
+const apiCallArray = [apiCallDefaultCity1, apiCallDefaultCity2, apiCallDefaultCity3];
+
 function positionSuccess(pos) {
 
     let lat = pos.coords.latitude;
     let lon = pos.coords.longitude;
 
     const apiCallCurrentPos = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=es&units=metric&appid=${apiKey}`;
-    const apiCallDefaultCity1 = `https://api.openweathermap.org/data/2.5/weather?q=${littleCities[0]}&lang=es&units=metric&APPID=${apiKey}`;
-    const apiCallDefaultCity2 = `https://api.openweathermap.org/data/2.5/weather?q=${littleCities[1]}&lang=es&units=metric&APPID=${apiKey}`;
-    const apiCallDefaultCity3 = `https://api.openweathermap.org/data/2.5/weather?q=${littleCities[2]}&lang=es&units=metric&APPID=${apiKey}`;
+    fetchAPIbigCard(apiCallCurrentPos);  
 
-    fetchAPIbigCard(apiCallCurrentPos);   
-    fetchAPIlittleCard1(apiCallDefaultCity1);
-    fetchAPIlittleCard2(apiCallDefaultCity2);
-    fetchAPIlittleCard3(apiCallDefaultCity3);
-}
+    /*Guarda las llamadas a la api con el nombre de 3 ciudades distintas */
 
-function positionNotOk(err) {
-
-    console.warn(err.message);
-    let msg;
-    switch(err.code) {
-        case err.PERMISSION_DENIED:
-            msg = "Acceso a ubicación denegado."
-            break;
-        case err.POSITION_UNAVAILABLE:
-            msg = "Su posición actual no esta disponible."
-            break;
-        case err.TIMEOUT:
-            msg = "No se ha podido obtener su ubicación en el tiempo esperado."
-            break;
-        default:
-            msg = "Error desconocido, por intente denuevo en unos instantes."
-            break;
+    for (let i = 0; i < apiCallArray.length; i++) {
+        apiCallArray[i] = `https://api.openweathermap.org/data/2.5/weather?q=${littleCities[i]}&lang=es&units=metric&APPID=${apiKey}`; 
     }
 
-    console.log(msg);
+    fetchAPIlittleCards();
 }
-
-
-userInput.addEventListener("input", () => {
-    event.preventDefault()
-});
 
 // EVENTO QUE OCURRE AL APRETAR EL BOTON PARA BUSCAR LA CIUDAD
 
 submitButton.addEventListener("click", () => {
 
-    const cityInputBtn = userInput.value;
+    if(validate(userInput.value) == true){
 
-    const userApiCallClick = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputBtn}&lang=es&units=metric&APPID=${apiKey}`;
+        const cityInputBtn = userInput.value;
+        const userApiCallClick = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputBtn}&lang=es&units=metric&APPID=${apiKey}`;
+        fetchAPIbigCard(userApiCallClick);
 
-    fetchAPIbigCard(userApiCallClick);
-
+    } else {
+        cityToast();
+    }
 });
 
 // EVENTO PARA CAPTURAR TECLA "ENTER" EN EL INPUT
@@ -78,13 +61,16 @@ document.querySelector(".inputText").addEventListener("keyup", function (event){
 
     if(event.key == "Enter") {
 
-        const cityInputEnter = userInput.value;
-        userInput.value = "";
+        if(validate(userInput.value) == true) {
 
-        const enterApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEnter}&lang=es&units=metric&APPID=${apiKey}`;
-
-        fetchAPIbigCard(enterApiCall);
-    }
-    
+            const cityInputEnter = userInput.value;
+            userInput.value = "";
+            const enterApiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputEnter}&lang=es&units=metric&APPID=${apiKey}`;
+            fetchAPIbigCard(enterApiCall);
+            
+        } else {
+            cityToast();
+        }
+    } 
 });
 

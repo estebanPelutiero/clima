@@ -7,22 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima</title>
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body>
 
     <div class="container">
         <div class="big-card">
-
-            <div class="form-flex">
-                <input id="input-name" type="text" placeholder="Escriba su nombre" class="input-user">
-                <button class="btn-ok"><img src="./img/ok.png" class="ok"></button>
-            </div>
-
             <div class="search">
                 <input type="text" class="inputText" placeholder="Ingrese una ciudad: ">
                 <button class="btn"><img src="./img/lupa.png" class="img-sizer"></button>
@@ -31,7 +26,10 @@
         </div>
     
         <div class="little-container">
-            <div class="little-welcome-card"><p class="welcome-p">Bienvenido</p><span class="span"></span></div>
+            <div class="luxon-flex">
+                <div class="time-card"></div>
+                <div class="date-card"></div>
+            </div>
             <div class="little-card1 little-flex"></div>
             <div class="little-card2 little-flex"></div>
             <div class="little-card3 little-flex"></div>
@@ -40,9 +38,11 @@
 
     
     <script src="main.js"></script>
-    <script src="login.js"></script>
     <script src="showContent.js"></script>
-    <script src="citySaving.js"></script>
+    <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+    <script src="times.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="validate.js"></script>
 </body>
 
 </html>

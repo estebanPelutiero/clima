@@ -22,7 +22,7 @@ body {
 .big-card {
     background-color: rgba(0, 0, 0, 0.849);
     color: whitesmoke;
-    padding: 1.5em 2em 2em 2em;
+    padding: 2.7em 2em;
     border-radius: 30px;
     width: 100%;
     max-width: 420px;
@@ -126,30 +126,40 @@ body {
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.849);
     color: white;
-    padding: 0.4em 0.1em;
+    padding: 0.25em 0.1em;
     border-radius: 30px;
     width: 110%;
     max-width: 900px;
-    margin: 15px;
+    margin: 11px 15px;
     box-shadow: 4px 9px 14px -1px rgba(17,51,85,0.27);
 }
 
-.little-welcome-card {
+.time-card,
+.date-card {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.849);
     color: white;
-    padding: 0.1em;
-    border-radius: 30px;
-    width: 110%;
+    border-radius: 20px;
+    width: 55%;
     max-width: 900px;
     margin: 15px;
     box-shadow: 4px 9px 14px -1px rgba(17,51,85,0.27);
 }
 
+.luxon-flex {
+    display: flex;
+    flex-direction: row;
+    width: 116%;
+    font-size: 1em;
+}
 
+.date-time-css {
+    color: rgba(245, 245, 245, 0.781); 
+    font-size: 0.9em;
+}
 
 .little-container {
     width: 40%;
@@ -157,13 +167,13 @@ body {
 
 .little-name {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.7em;
     margin-left: 20px;
 }
 
 .little-temp {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.7em;
     color: rgba(245, 245, 245, 0.781);
 }
 
