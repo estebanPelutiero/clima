@@ -1,8 +1,10 @@
+/* Guardo los nodos de las cards que muestran el tiempo y la fecha */
+
 const timeOutput = document.querySelector(".time-card");
 const dateOutput = document.querySelector(".date-card");
 
 /* Uso de la libreria Luxon para mostrar reloj con hora:minuto:segundo actualizado en tiempo real de la ubicacion
-actual del usuario */
+actual del usuario, tambien muestro la fecha */
 
 const showTime = () => {
     const timeNow = luxon.DateTime.now();
@@ -17,7 +19,7 @@ const updateTime = () => {
     showTime();
 }
 
-/* intervalo que ejecuta la funcion de renovar el reloj cada 1 segundo */
+/* intervalo que ejecuta la funcion de actualizar el reloj cada 1 segundo */
 
 setInterval( () => {
     updateTime();

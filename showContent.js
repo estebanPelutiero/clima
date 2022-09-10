@@ -20,6 +20,10 @@ const fetchAPIbigCard = async (call) => {
 
 // MOSTRAR CONTENIDO CARTAS PEQUEÑAS
 
+/* Con el bucle logre rellenar las 3 cartas pequeñas con una misma funcion, recorriendo 2 arrays en las iteraciones. 
+Recorro el array que contiene los nodos de las 3 cartas pequeñas, rellenando cada una de ellas con los datos que retorna 
+las llamadas a la API que previamente se guardaron en apiCallArray. */
+
 const fetchAPIlittleCards = async () => {
 
     for (let i = 0; i < littleArray.length; i++) {
